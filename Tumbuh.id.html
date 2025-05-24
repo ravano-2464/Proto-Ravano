@@ -16,7 +16,50 @@
   </head>
   <body>
     <div class="phone-container">
-      <!-- Screen 1: Login -->
+      <!-- Screen: Register -->
+      <div id="register" class="screen">
+        <div class="header">
+          <button class="back-button" onclick="showScreen('login')">←</button>
+          <h1>Daftar Akun</h1>
+          <div></div>
+        </div>
+        <div class="content">
+          <div class="form-group">
+            <label class="form-label">Nama Lengkap</label>
+            <input
+              type="text"
+              class="form-input"
+              placeholder="Contoh: Bambang Sutrisno"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Nomor HP</label>
+            <input type="tel" class="form-input" placeholder="08123456789" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-input"
+              placeholder="Buat password"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Konfirmasi Password</label>
+            <input
+              type="password"
+              class="form-input"
+              placeholder="Ulangi password"
+            />
+          </div>
+          <button class="btn" onclick="showScreen('dashboard')">Daftar</button>
+          <button class="btn btn-secondary" onclick="showScreen('login')">
+            Batal
+          </button>
+        </div>
+      </div>
+
+      <!-- Screen 2: Login -->
       <div id="login" class="screen active">
         <div class="login-container">
           <div class="logo">🌱</div>
@@ -48,7 +91,7 @@
         </div>
       </div>
 
-      <!-- Screen 2: Dashboard -->
+      <!-- Screen 3: Dashboard -->
       <div id="dashboard" class="screen">
         <div class="header">
           <h1>Dashboard</h1>
@@ -139,7 +182,7 @@
         </div>
       </div>
 
-      <!-- Screen 3: Monitoring -->
+      <!-- Screen 4: Monitoring -->
       <div id="monitoring" class="screen">
         <div class="header">
           <button class="back-button" onclick="showScreen('dashboard')">
@@ -237,7 +280,7 @@
         </div>
       </div>
 
-      <!-- Screen 4: Watering Schedule -->
+      <!-- Screen 5: Watering Schedule -->
       <div id="watering" class="screen">
         <div class="header">
           <button class="back-button" onclick="showScreen('dashboard')">
@@ -319,7 +362,7 @@
         </div>
       </div>
 
-      <!-- Screen 5: Pest Detection -->
+      <!-- Screen 6: Pest Detection -->
       <div id="pest" class="screen">
         <div class="header">
           <button class="back-button" onclick="showScreen('dashboard')">
@@ -418,7 +461,7 @@
         </div>
       </div>
 
-      <!-- Screen 6: Harvest Schedule -->
+      <!-- Screen 7: Harvest Schedule -->
       <div id="harvest" class="screen">
         <div class="header">
           <button class="back-button" onclick="showScreen('dashboard')">
@@ -512,7 +555,7 @@
         </div>
       </div>
 
-      <!-- Screen 7: Notifications -->
+      <!-- Screen 8: Notifications -->
       <div id="notifications" class="screen">
         <div class="header">
           <button class="back-button" onclick="showScreen('dashboard')">
@@ -602,7 +645,7 @@
         </div>
       </div>
 
-      <!-- Screen 8: Add Schedule -->
+      <!-- Screen 9: Add Schedule -->
       <div id="add-schedule" class="screen">
         <div class="header">
           <button class="back-button" onclick="showScreen('watering')">

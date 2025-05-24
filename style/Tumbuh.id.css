@@ -177,20 +177,20 @@
       }
 
       .form-label {
-        display: block;
+        display: flex;
         margin-bottom: 8px;
         font-weight: 500;
-        color: rgba(255,255,255,0.9);
+        color: rgba(17, 17, 17, 0.9);
       }
 
       .form-input {
         width: 100%;
-        padding: 15px;
+        padding: 20px;
         border: none;
-        border-radius: 12px;
-        font-size: 16px;
-        background: rgba(255,255,255,0.2);
-        color: white;
+        border-radius: 15px;
+        font-size: 15px;
+        background: rgb(255, 255, 255);
+        color: rgb(3, 3, 3);
         backdrop-filter: blur(10px);
         transition: all 0.3s ease;
       }
