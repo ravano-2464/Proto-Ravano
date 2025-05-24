@@ -154,7 +154,7 @@ body {
 /* Register Screen Styles - Now matching login */
 .register-container {
   flex: 1;
-  padding: 40px 30px 30px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -167,7 +167,7 @@ body {
 
 .back-button-register {
   position: absolute;
-  top:40px;
+  top:20px;
   left: 20px;
   color: white;
   font-size: 20px;
