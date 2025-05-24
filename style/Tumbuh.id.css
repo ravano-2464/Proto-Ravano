@@ -151,6 +151,48 @@ body {
   color: white;
 }
 
+/* Register Screen Styles - Now matching login */
+.register-container {
+  flex: 1;
+  padding: 40px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
+  color: white;
+  position: relative;
+}
+
+.back-button-register {
+  position: absolute;
+  top:40px;
+  left: 20px;
+  color: white;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  background: transparent; 
+  border: none;            
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.back-button-register:hover {
+  background: transparent; 
+  transform: scale(1.1);
+}
+
+.register-container h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
 .logo {
   font-size: 80px;
   margin-bottom: 20px;
