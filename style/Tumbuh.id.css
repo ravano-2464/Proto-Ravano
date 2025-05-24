@@ -239,6 +239,35 @@ body {
   transform: scale(1.02);
 }
 
+.form-label-register {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: rgba(5, 5, 5, 0.9);
+}
+
+.form-input-register {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  background: rgb(255, 253, 253);
+  color: rgb(24, 23, 23);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.form-input-register::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.form-input-register:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+}
+
 .btn {
   width: 100%;
   padding: 15px;

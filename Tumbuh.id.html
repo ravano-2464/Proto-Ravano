@@ -25,35 +25,35 @@
         </div>
         <div class="content">
           <div class="form-group">
-            <label class="form-label">Nama Lengkap</label>
+            <label class="form-label-register">Nama Lengkap</label>
             <input
               type="text"
-              class="form-input"
+              class="form-input-register"
               placeholder="Contoh: Bambang Sutrisno"
             />
           </div>
           <div class="form-group">
-            <label class="form-label">Nomor HP</label>
-            <input type="tel" class="form-input" placeholder="08123456789" />
+            <label class="form-label-register">Nomor HP</label>
+            <input type="tel" class="form-input-register" placeholder="08123456789" />
           </div>
           <div class="form-group">
-            <label class="form-label">Password</label>
+            <label class="form-label-register">Password</label>
             <input
               type="password"
-              class="form-input"
+              class="form-input-register"
               placeholder="Buat password"
             />
           </div>
           <div class="form-group">
-            <label class="form-label">Konfirmasi Password</label>
+            <label class="form-label-register">Konfirmasi Password</label>
             <input
               type="password"
-              class="form-input"
+              class="form-input-register"
               placeholder="Ulangi password"
             />
           </div>
           <button class="btn" onclick="showScreen('dashboard')">Daftar</button>
-          <button class="btn btn-secondary" onclick="showScreen('login')">
+          <button class="btn" style="color: red; margin-top: 15px;" onclick="showScreen('login')">
             Batal
           </button>
         </div>
@@ -85,7 +85,8 @@
           <button
             class="btn btn-secondary"
             style="margin-top: 10px; color: white"
-          >
+            onclick="showScreen('register')"
+            >
             Daftar Sebagai Petani Baru
           </button>
         </div>
