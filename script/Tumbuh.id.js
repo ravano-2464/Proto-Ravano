@@ -27,7 +27,7 @@ function showScreen(screenId) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const markAllReadButton = document.querySelector("btn-notification");
+  const markAllReadButton = document.querySelector(".btn-notification");
 
   if (
     markAllReadButton &&
