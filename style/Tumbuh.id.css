@@ -222,6 +222,23 @@
         animation: fadeInUp 1s ease-out 1.1s forwards;
       }
 
+      .btn-notification {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: white;
+        color: #4CAF50;
+        position: relative;
+        overflow: hidden;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 1.1s forwards;
+      }
+
       .btn:hover {
         transform: translateY(-2px);
         box-shadow: 0 10px 25px rgba(0,0,0,0.2);

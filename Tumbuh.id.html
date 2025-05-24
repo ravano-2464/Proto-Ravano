@@ -290,7 +290,11 @@
             </div>
           </div>
 
-          <button class="btn" onclick="showScreen('add-schedule')">
+          <button
+            class="btn"
+            style="margin-top: 15px"
+            onclick="showScreen('add-schedule')"
+          >
             + Tambah Jadwal Baru
           </button>
         </div>
@@ -366,7 +370,7 @@
             </div>
           </div>
 
-          <div class="status-card">
+          <div class="status-card" style="margin-top: 10px">
             <h3>Hama yang Sering Ditemukan</h3>
             <div style="margin-top: 15px">
               <div
@@ -408,7 +412,9 @@
             </div>
           </div>
 
-          <button class="btn">Lihat Panduan Pengendalian</button>
+          <button class="btn" style="margin-top: 10px">
+            Lihat Panduan Pengendalian
+          </button>
         </div>
       </div>
 
@@ -439,7 +445,7 @@
             </div>
           </div>
 
-          <div class="status-card status-warning">
+          <div class="status-card status-warning" style="margin-top: 15px">
             <div class="status-header">
               <h3>🌶️ Cabai Merah</h3>
               <span style="color: #ff9800">2 Minggu Lagi</span>
@@ -455,7 +461,7 @@
             </div>
           </div>
 
-          <div class="status-card">
+          <div class="status-card" style="margin-top: 15px">
             <h3>💰 Ringkasan Finansial</h3>
             <div style="margin-top: 15px">
               <div
@@ -497,8 +503,12 @@
             </div>
           </div>
 
-          <button class="btn">Catat Hasil Panen</button>
-          <button class="btn btn-secondary">Lihat Harga Pasar</button>
+          <button class="btn" style="margin-top: 15px">
+            Catat Hasil Panen
+          </button>
+          <button class="btn" style="margin-top: 15px; color: #4caf50">
+            Lihat Harga Pasar
+          </button>
         </div>
       </div>
 
@@ -567,7 +577,9 @@
             </p>
           </div>
 
-          <button class="btn btn-secondary" style="color: black;">Tandai Semua Sudah Dibaca</button>
+          <button class="btn-notification" style="color: #4caf50">
+            Tandai Semua Sudah Dibaca
+          </button>
         </div>
 
         <div class="bottom-nav">
@@ -662,7 +674,6 @@
         </div>
       </div>
     </div>
-
     <script>
       function showScreen(screenId) {
         // Sembunyikan semua screen
@@ -689,6 +700,27 @@
           }
         });
       }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const markAllReadButton = document.querySelector(".btn");
+
+        if (
+          markAllReadButton &&
+          markAllReadButton.textContent.includes("Tandai Semua Sudah Dibaca")
+        ) {
+          markAllReadButton.addEventListener("click", function () {
+            document.querySelectorAll(".notification-item").forEach((item) => {
+              item.style.opacity = "0.6";
+              item.style.borderLeft = "4px solid #ccc";
+            });
+
+            markAllReadButton.textContent = "✅ Semua Notifikasi Sudah Dibaca";
+            markAllReadButton.disabled = true;
+            markAllReadButton.style.backgroundColor = "#e0e0e0";
+            markAllReadButton.style.cursor = "default";
+          });
+        }
+      });
 
       // Toggle switch
       document.addEventListener("click", function (e) {
