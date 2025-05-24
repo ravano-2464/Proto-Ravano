@@ -16,11 +16,12 @@
   </head>
   <body>
     <div class="phone-container">
-
-      <!-- Screen1: Register -->
+      <!-- Screen 1: Register -->
       <div id="register" class="screen">
         <div class="register-container">
-          <button class="back-button-register" onclick="showScreen('login')">←</button>
+          <button class="back-button-register" onclick="showScreen('login')">
+            ←
+          </button>
           <h1>Daftar Akun</h1>
           <div></div>
         </div>
@@ -35,7 +36,11 @@
           </div>
           <div class="form-group">
             <label class="form-label-register">Nomor HP</label>
-            <input type="tel" class="form-input-register" placeholder="08123456789" />
+            <input
+              type="tel"
+              class="form-input-register"
+              placeholder="08123456789"
+            />
           </div>
           <div class="form-group">
             <label class="form-label-register">Password</label>
@@ -54,7 +59,11 @@
             />
           </div>
           <button class="btn" onclick="showScreen('dashboard')">Daftar</button>
-          <button class="btn" style="color: red; margin-top: 15px;" onclick="showScreen('login')">
+          <button
+            class="btn btn-secondary"
+            style="color: red; margin-top: 15px"
+            onclick="showScreen('login')"
+          >
             Batal
           </button>
         </div>
@@ -85,9 +94,9 @@
 
           <button
             class="btn btn-secondary"
-            style="margin-top: 10px; color: white"
+            style="margin-top: 10px; color: #4caf50"
             onclick="showScreen('register')"
-            >
+          >
             Daftar Sebagai Petani Baru
           </button>
         </div>
@@ -187,7 +196,7 @@
       <!-- Screen 4: Monitoring -->
       <div id="monitoring" class="screen">
         <div class="header">
-          <h1 style="text-align: center;">Monitor Kebun</h1>
+          <h1 style="text-align: center">Monitor Kebun</h1>
         </div>
 
         <div class="content">
@@ -254,8 +263,12 @@
             </div>
           </div>
 
-          <button class="btn" style="margin-top: 15px">
-            Update Data Manual
+          <button
+            class="btn"
+            style="margin-top: 15px"
+            onclick="showScreen('update-manual')"
+          >
+            <i class="fa-solid fa-wrench"></i> Update Data Manual
           </button>
         </div>
         <div class="bottom-nav">
@@ -278,7 +291,51 @@
         </div>
       </div>
 
-      <!-- Screen 5: Watering Schedule -->
+      <!-- Screen 5: Update Data Manual -->
+      <div id="update-manual" class="screen">
+        <div class="header">
+          <button class="back-button" onclick="showScreen('monitoring')">
+            ←
+          </button>
+          <h1>Update Data Manual</h1>
+          <div></div>
+        </div>
+        <div class="content">
+          <div class="form-group">
+            <label class="form-label">Suhu Tanah (°C)</label>
+            <input type="number" class="form-input" placeholder="Contoh: 25" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Kelembaban (%)</label>
+            <input type="number" class="form-input" placeholder="Contoh: 60" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">pH Tanah</label>
+            <input
+              type="number"
+              step="0.1"
+              class="form-input"
+              placeholder="Contoh: 6.5"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Cahaya (%)</label>
+            <input type="number" class="form-input" placeholder="Contoh: 85" />
+          </div>
+          <button class="btn" onclick="showScreen('monitoring')">
+            Simpan Data
+          </button>
+          <button
+            class="btn btn-secondary"
+            style="color: red; margin-top: 15px"
+            onclick="showScreen('monitoring')"
+          >
+            Batal
+          </button>
+        </div>
+      </div>
+
+      <!-- Screen 6: Watering Schedule -->
       <div id="watering" class="screen">
         <div class="header">
           <h1>Jadwal Penyiraman</h1>
@@ -357,7 +414,7 @@
         </div>
       </div>
 
-      <!-- Screen 6: Pest Detection -->
+      <!-- Screen 7: Deteksi Hama -->
       <div id="pest" class="screen">
         <div class="header">
           <button class="back-button" onclick="showScreen('dashboard')">
@@ -456,7 +513,7 @@
         </div>
       </div>
 
-      <!-- Screen 7: Harvest Schedule -->
+      <!-- Screen 8: Harvest Schedule -->
       <div id="harvest" class="screen">
         <div class="header">
           <button class="back-button" onclick="showScreen('dashboard')">
@@ -550,7 +607,7 @@
         </div>
       </div>
 
-      <!-- Screen 8: Notifications -->
+      <!-- Screen 9: Notifications -->
       <div id="notifications" class="screen">
         <div class="header">
           <h1>Notifikasi</h1>
@@ -611,7 +668,9 @@
             </p>
           </div>
 
-          <button class="btn-notification" style="color: #4caf50">Tandai Semua Sudah Dibaca</button>
+          <button class="btn-notification" style="color: #4caf50">
+            Tandai Semua Sudah Dibaca
+          </button>
         </div>
 
         <div class="bottom-nav">
@@ -634,12 +693,9 @@
         </div>
       </div>
 
-      <!-- Screen 9: Add Schedule -->
+      <!-- Screen 10: Add Schedule -->
       <div id="add-schedule" class="screen">
         <div class="header">
-          <button class="back-button-schedule" onclick="showScreen('watering')">
-            ←
-          </button>
           <h1>Tambah Jadwal</h1>
           <div></div>
         </div>
@@ -701,8 +757,16 @@
             </label>
           </div>
 
-          <button class="btn">Simpan Jadwal</button>
-          <button class="btn btn-secondary">Batal</button>
+          <button class="btn" onclick="showScreen('dashboard')">
+            Simpan Jadwal
+          </button>
+          <button
+            class="btn btn-secondary"
+            style="color: red; margin-top: 15px"
+            onclick="showScreen('watering')"
+          >
+            Batal
+          </button>
         </div>
       </div>
     </div>
