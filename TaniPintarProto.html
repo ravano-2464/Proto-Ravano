@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaniPintar - Smart Agriculture App</title>
+    <link rel="stylesheet" href="TaniPintarProto.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="phone-container">
+      <!-- Screen 1: Login -->
+      <div id="login" class="screen active">
+        <div class="login-container">
+          <div class="logo">🌱</div>
+          <h1 class="app-title">TaniPintar</h1>
+          <p class="app-subtitle">Smart Agriculture untuk Petani Modern</p>
+
+          <div class="form-group">
+            <label class="form-label">Nomor HP</label>
+            <input type="tel" class="form-input" placeholder="08123456789" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-input"
+              placeholder="Masukkan password"
+            />
+          </div>
+
+          <button class="btn" onclick="showScreen('dashboard')">Masuk</button>
+          
+          <button class="btn btn-secondary" style="margin-top: 10px">
+            Daftar Sebagai Petani Baru
+          </button>
+        </div>
+      </div>
+
+      <!-- Screen 2: Dashboard -->
+      <div id="dashboard" class="screen">
+        <div class="header">
+          <h1>Dashboard</h1>
+          <div class="profile-icon">👤</div>
+        </div>
+
+        <div class="content">
+          <div class="welcome-card">
+            <h2>Selamat Pagi, Pak Bambang! 🌅</h2>
+            <p>Cuaca hari ini cerah, cocok untuk aktivitas kebun</p>
+          </div>
+
+          <div class="weather-widget">
+            <div class="weather-header">
+              <h3>Cuaca Hari Ini</h3>
+              <span>☀️</span>
+            </div>
+            <div class="temp-display">28°C</div>
+            <div class="weather-details">
+              <div class="weather-item">
+                <div>💧</div>
+                <div>Kelembaban</div>
+                <div><strong>75%</strong></div>
+              </div>
+              <div class="weather-item">
+                <div>💨</div>
+                <div>Angin</div>
+                <div><strong>12 km/h</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="quick-actions">
+            <div class="action-card" onclick="showScreen('monitoring')">
+              <div class="action-icon monitor-icon">📊</div>
+              <div>Monitor Kebun</div>
+            </div>
+            <div class="action-card" onclick="showScreen('watering')">
+              <div class="action-icon water-icon">💧</div>
+              <div>Jadwal Siram</div>
+            </div>
+            <div class="action-card" onclick="showScreen('pest')">
+              <div class="action-icon pest-icon">🐛</div>
+              <div>Deteksi Hama</div>
+            </div>
+            <div class="action-card" onclick="showScreen('harvest')">
+              <div class="action-icon harvest-icon">🌾</div>
+              <div>Jadwal Panen</div>
+            </div>
+          </div>
+
+          <div class="status-cards">
+            <div class="status-card status-good">
+              <div class="status-header">
+                <h4>Kebun Tomat</h4>
+                <span style="color: #4caf50">●</span>
+              </div>
+              <p>Kondisi baik, siap panen minggu depan</p>
+            </div>
+
+            <div class="status-card status-warning">
+              <div class="status-header">
+                <h4>Kebun Cabai</h4>
+                <span style="color: #ff9800">●</span>
+              </div>
+              <p>Perlu perhatian: kelembaban tanah rendah</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-nav">
+          <div class="nav-item active" onclick="showScreen('dashboard')">
+            <i class="fa-solid fa-house-chimney" style="font-size: 25px"></i>
+            <div class="nav-text">Home</div>
+          </div>
+          <div class="nav-item" onclick="showScreen('monitoring')">
+            <i class="fa-solid fa-chart-line" style="font-size: 25px"></i>
+            <div class="nav-text">Monitor</div>
+          </div>
+          <div class="nav-item" onclick="showScreen('watering')">
+            <i class="fa-solid fa-calendar-days" style="font-size: 25px"></i>
+            <div class="nav-text">Jadwal</div>
+          </div>
+          <div class="nav-item" onclick="showScreen('notifications')">
+            <i class="fa-solid fa-bell" style="font-size: 25px"></i>
+            <div class="nav-text">Notifikasi</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 3: Monitoring -->
+      <div id="monitoring" class="screen">
+        <div class="header">
+          <button class="back-button" onclick="showScreen('dashboard')">
+            ←
+          </button>
+          <h1>Monitor Kebun</h1>
+          <div></div>
+        </div>
+
+        <div class="content">
+          <div class="sensor-grid">
+            <div class="sensor-card">
+              <div>🌡️</div>
+              <div>Suhu Tanah</div>
+              <div class="sensor-value soil-good">24°C</div>
+              <small>Optimal</small>
+            </div>
+            <div class="sensor-card">
+              <div>💧</div>
+              <div>Kelembaban</div>
+              <div class="sensor-value soil-warning">45%</div>
+              <small>Perlu Siram</small>
+            </div>
+            <div class="sensor-card">
+              <div>🌱</div>
+              <div>pH Tanah</div>
+              <div class="sensor-value soil-good">6.5</div>
+              <small>Baik</small>
+            </div>
+            <div class="sensor-card">
+              <div>☀️</div>
+              <div>Cahaya</div>
+              <div class="sensor-value soil-good">85%</div>
+              <small>Cukup</small>
+            </div>
+          </div>
+
+          <div class="status-card">
+            <h3>Grafik Kelembaban 7 Hari Terakhir</h3>
+            <canvas id="humidityChart" width="100%" height="160"> </canvas>
+          </div>
+
+          <div class="status-card" style="margin-top: 20px">
+            <h3>Rekomendasi Hari Ini</h3>
+            <div
+              style="
+                height: 160px;
+                background: #f5f5f5;
+                border-radius: 10px;
+                margin-top: 10px;
+                padding: 15px;
+                overflow-y: auto;
+              "
+            >
+              <div
+                style="display: flex; align-items: center; margin-bottom: 10px"
+              >
+                <span style="color: #ff9800; margin-right: 10px">⚠️</span>
+                <span>Siram kebun cabai sore hari</span>
+              </div>
+              <div
+                style="display: flex; align-items: center; margin-bottom: 10px"
+              >
+                <span style="color: #4caf50; margin-right: 10px">✅</span>
+                <span>Kondisi tomat siap untuk dipanen</span>
+              </div>
+              <div style="display: flex; align-items: center">
+                <span style="color: #2196f3; margin-right: 10px">ℹ️</span>
+                <span>Cuaca besok hujan, tunda penyemprotan</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn" style="margin-top: 15px">
+            Update Data Manual
+          </button>
+        </div>
+        <div class="bottom-nav">
+          <div class="nav-item" onclick="showScreen('dashboard')">
+            <i class="fa-solid fa-house-chimney" style="font-size: 25px"></i>
+            <div class="nav-text">Home</div>
+          </div>
+          <div class="nav-item active" onclick="showScreen('monitoring')">
+            <i class="fa-solid fa-chart-line" style="font-size: 25px"></i>
+            <div class="nav-text">Monitor</div>
+          </div>
+          <div class="nav-item" onclick="showScreen('watering')">
+            <i class="fa-solid fa-calendar-days" style="font-size: 25px"></i>
+            <div class="nav-text">Jadwal</div>
+          </div>
+          <div class="nav-item" onclick="showScreen('notifications')">
+            <i class="fa-solid fa-bell" style="font-size: 25px"></i>
+            <div class="nav-text">Notifikasi</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 4: Watering Schedule -->
+      <div id="watering" class="screen">
+        <div class="header">
+          <button class="back-button" onclick="showScreen('dashboard')">
+            ←
+          </button>
+          <h1>Jadwal Penyiraman</h1>
+          <div></div>
+        </div>
+
+        <div class="content">
+          <div class="schedule-item">
+            <div>
+              <div class="schedule-time">06:00</div>
+              <div class="schedule-task">Siram kebun tomat</div>
+            </div>
+            <div class="toggle-switch active"></div>
+          </div>
+
+          <div class="schedule-item">
+            <div>
+              <div class="schedule-time">17:00</div>
+              <div class="schedule-task">Siram kebun cabai</div>
+            </div>
+            <div class="toggle-switch active"></div>
+          </div>
+
+          <div class="schedule-item">
+            <div>
+              <div class="schedule-time">07:00</div>
+              <div class="schedule-task">Pupuk tanaman tomat</div>
+            </div>
+            <div class="toggle-switch"></div>
+          </div>
+
+          <div class="schedule-item">
+            <div>
+              <div class="schedule-time">16:00</div>
+              <div class="schedule-task">Cek kondisi cabai</div>
+            </div>
+            <div class="toggle-switch active"></div>
+          </div>
+
+          <div class="status-card" style="margin-top: 20px">
+            <h3>Tips Penyiraman</h3>
+            <div style="margin-top: 15px">
+              <p>• Siram pada pagi atau sore hari</p>
+              <p>• Pastikan air tidak menggenang</p>
+              <p>• Perhatikan kondisi cuaca</p>
+              <p>• Cek kelembaban tanah sebelum menyiram</p>
+            </div>
+          </div>
+
+          <button class="btn" onclick="showScreen('add-schedule')">
+            + Tambah Jadwal Baru
+          </button>
+        </div>
+
+        <div class="bottom-nav">
+          <div class="nav-item" onclick="showScreen('dashboard')">
+            <i class="fa-solid fa-house-chimney" style="font-size: 25px"></i>
+            <div class="nav-text">Home</div>
+          </div>
+          <div class="nav-item" onclick="showScreen('monitoring')">
+            <i class="fa-solid fa-chart-line" style="font-size: 25px"></i>
+            <div class="nav-text">Monitor</div>
+          </div>
+          <div class="nav-item active" onclick="showScreen('watering')">
+            <i class="fa-solid fa-calendar-days" style="font-size: 25px"></i>
+            <div class="nav-text">Jadwal</div>
+          </div>
+          <div class="nav-item" onclick="showScreen('notifications')">
+            <i class="fa-solid fa-bell" style="font-size: 25px"></i>
+            <div class="nav-text">Notifikasi</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 5: Pest Detection -->
+      <div id="pest" class="screen">
+        <div class="header">
+          <button class="back-button" onclick="showScreen('dashboard')">
+            ←
+          </button>
+          <h1>Deteksi Hama</h1>
+          <div></div>
+        </div>
+
+        <div class="content">
+          <button class="camera-button">📷 Foto Tanaman untuk Analisis</button>
+
+          <div class="image-preview">
+            <div style="text-align: center; color: #999">
+              <div style="font-size: 48px">📸</div>
+              <p>Ambil foto tanaman yang bermasalah</p>
+            </div>
+          </div>
+
+          <div class="status-card">
+            <h3>Hasil Analisis Terakhir</h3>
+            <div style="margin-top: 15px">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 10px;
+                "
+              >
+                <span>Tanaman: Tomat</span>
+                <span style="color: #4caf50">✅ Sehat</span>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 10px;
+                "
+              >
+                <span>Tanggal: 23 Mei 2025</span>
+              </div>
+              <p style="color: #666; font-size: 14px">
+                Tidak ditemukan tanda-tanda hama atau penyakit. Lanjutkan
+                perawatan rutin.
+              </p>
+            </div>
+          </div>
+
+          <div class="status-card">
+            <h3>Hama yang Sering Ditemukan</h3>
+            <div style="margin-top: 15px">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  margin-bottom: 15px;
+                  padding: 10px;
+                  background: #f8f9fa;
+                  border-radius: 10px;
+                "
+              >
+                <div style="font-size: 32px; margin-right: 15px">🐛</div>
+                <div>
+                  <div style="font-weight: bold">Ulat Grayak</div>
+                  <div style="font-size: 14px; color: #666">
+                    Menyerang daun muda
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  margin-bottom: 15px;
+                  padding: 10px;
+                  background: #f8f9fa;
+                  border-radius: 10px;
+                "
+              >
+                <div style="font-size: 32px; margin-right: 15px">🕷️</div>
+                <div>
+                  <div style="font-weight: bold">Tungau Merah</div>
+                  <div style="font-size: 14px; color: #666">
+                    Membuat bercak pada daun
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn">Lihat Panduan Pengendalian</button>
+        </div>
+      </div>
+
+      <!-- Screen 6: Harvest Schedule -->
+      <div id="harvest" class="screen">
+        <div class="header">
+          <button class="back-button" onclick="showScreen('dashboard')">
+            ←
+          </button>
+          <h1>Jadwal Panen</h1>
+          <div></div>
+        </div>
+
+        <div class="content">
+          <div class="status-card status-good">
+            <div class="status-header">
+              <h3>🍅 Tomat Merah</h3>
+              <span style="color: #4caf50">Siap Panen</span>
+            </div>
+            <div style="margin-top: 15px">
+              <div>Estimasi Panen: <strong>27-30 Mei 2025</strong></div>
+              <div>Perkiraan Hasil: <strong>150-200 kg</strong></div>
+              <div>Harga Prediksi: <strong>Rp 8.000/kg</strong></div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 95%"></div>
+              </div>
+              <small>95% matang</small>
+            </div>
+          </div>
+
+          <div class="status-card status-warning">
+            <div class="status-header">
+              <h3>🌶️ Cabai Merah</h3>
+              <span style="color: #ff9800">2 Minggu Lagi</span>
+            </div>
+            <div style="margin-top: 15px">
+              <div>Estimasi Panen: <strong>5-10 Juni 2025</strong></div>
+              <div>Perkiraan Hasil: <strong>80-120 kg</strong></div>
+              <div>Harga Prediksi: <strong>Rp 25.000/kg</strong></div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 65%"></div>
+              </div>
+              <small>65% matang</small>
+            </div>
+          </div>
+
+          <div class="status-card">
+            <h3>💰 Ringkasan Finansial</h3>
+            <div style="margin-top: 15px">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  margin-bottom: 10px;
+                "
+              >
+                <span>Total Investasi:</span>
+                <span><strong>Rp 2.500.000</strong></span>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  margin-bottom: 10px;
+                "
+              >
+                <span>Estimasi Pendapatan:</span>
+                <span><strong>Rp 4.200.000</strong></span>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  margin-bottom: 10px;
+                "
+              >
+                <span>Keuntungan Bersih:</span>
+                <span style="color: #4caf50"
+                  ><strong>Rp 1.700.000</strong></span
+                >
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <span>ROI:</span>
+                <span style="color: #4caf50"><strong>68%</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn">Catat Hasil Panen</button>
+          <button class="btn btn-secondary">Lihat Harga Pasar</button>
+        </div>
+      </div>
+
+      <!-- Screen 7: Notifications -->
+      <div id="notifications" class="screen">
+        <div class="header">
+          <button class="back-button" onclick="showScreen('dashboard')">
+            ←
+          </button>
+          <h1>Notifikasi</h1>
+          <div></div>
+        </div>
+
+        <div class="content">
+          <div class="notification-item">
+            <div class="notification-time">2 jam yang lalu</div>
+            <div class="notification-title">🚨 Peringatan Cuaca</div>
+            <p>
+              Hujan lebat diprediksi sore ini. Siapkan perlindungan untuk
+              tanaman muda.
+            </p>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-time">5 jam yang lalu</div>
+            <div class="notification-title">💧 Reminder Penyiraman</div>
+            <p>
+              Waktunya menyiram kebun cabai. Kelembaban tanah sudah mencapai
+              40%.
+            </p>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-time">1 hari yang lalu</div>
+            <div class="notification-title">🌱 Update Pertumbuhan</div>
+            <p>
+              Tanaman tomat menunjukkan pertumbuhan yang baik. Tinggi rata-rata
+              naik 3cm minggu ini.
+            </p>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-time">2 hari yang lalu</div>
+            <div class="notification-title">📈 Harga Pasar</div>
+            <p>
+              Harga tomat naik menjadi Rp 8.500/kg. Pertimbangkan untuk menjual
+              hasil panen.
+            </p>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-time">3 hari yang lalu</div>
+            <div class="notification-title">🐛 Deteksi Hama</div>
+            <p>
+              Ditemukan potensi serangan ulat pada kebun cabai sektor B. Segera
+              lakukan pengecekan.
+            </p>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-time">1 minggu yang lalu</div>
+            <div class="notification-title">✅ Pupuk Berhasil</div>
+            <p>
+              Pemupukan minggu lalu menunjukkan hasil positif. Daun terlihat
+              lebih hijau dan segar.
+            </p>
+          </div>
+
+          <button class="btn btn-secondary">Tandai Semua Sudah Dibaca</button>
+        </div>
+
+        <div class="bottom-nav">
+          <div class="nav-item" onclick="showScreen('dashboard')">
+            <i class="fa-solid fa-house-chimney" style="font-size: 25px"></i>
+            <div class="nav-text">Home</div>
+          </div>
+          <div class="nav-item" onclick="showScreen('monitoring')">
+            <i class="fa-solid fa-chart-line" style="font-size: 25px"></i>
+            <div class="nav-text">Monitor</div>
+          </div>
+          <div class="nav-item active" onclick="showScreen('watering')">
+            <i class="fa-solid fa-calendar-days" style="font-size: 25px"></i>
+            <div class="nav-text">Jadwal</div>
+          </div>
+          <div class="nav-item" onclick="showScreen('notifications')">
+            <i class="fa-solid fa-bell" style="font-size: 25px"></i>
+            <div class="nav-text">Notifikasi</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 8: Add Schedule -->
+      <div id="add-schedule" class="screen">
+        <div class="header">
+          <button class="back-button" onclick="showScreen('watering')">
+            ←
+          </button>
+          <h1>Tambah Jadwal</h1>
+          <div></div>
+        </div>
+
+        <div class="content">
+          <div class="form-group">
+            <label class="form-label">Jenis Aktivitas</label>
+            <select class="form-input">
+              <option>Pilih aktivitas...</option>
+              <option>Penyiraman</option>
+              <option>Pemupukan</option>
+              <option>Penyemprotan</option>
+              <option>Pengecekan</option>
+              <option>Panen</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Lokasi Kebun</label>
+            <select class="form-input">
+              <option>Pilih lokasi...</option>
+              <option>Kebun Tomat A</option>
+              <option>Kebun Tomat B</option>
+              <option>Kebun Cabai A</option>
+              <option>Kebun Cabai B</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Waktu</label>
+            <input type="time" class="form-input" value="06:00" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Pengulangan</label>
+            <select class="form-input">
+              <option>Pilih pengulangan...</option>
+              <option>Sekali saja</option>
+              <option>Setiap hari</option>
+              <option>Setiap 3 hari</option>
+              <option>Setiap minggu</option>
+              <option>Setiap 2 minggu</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Catatan (Opsional)</label>
+            <textarea
+              class="form-input"
+              rows="3"
+              placeholder="Tambahkan catatan khusus..."
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label style="display: flex; align-items: center; gap: 10px">
+              <input type="checkbox" checked />
+              <span>Aktifkan notifikasi untuk jadwal ini</span>
+            </label>
+          </div>
+
+          <button class="btn">Simpan Jadwal</button>
+          <button class="btn btn-secondary">Batal</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 9: Profile -->
+    <div id="profile" class="screen">
+      <div class="header">
+        <button class="back-button" onclick="showScreen('dashboard')">←</button>
+        <h1>Profil Saya</h1>
+        <div></div>
+      </div>
+
+      <div class="content">
+        <div class="status-card" style="text-align: center">
+          <div style="font-size: 64px; margin-bottom: 10px">👨‍🌾</div>
+          <h2 style="margin-bottom: 5px">Pak Bambang</h2>
+          <p style="color: #777">Petani Cabai & Tomat</p>
+        </div>
+
+        <div class="status-card">
+          <h3>Informasi Kontak</h3>
+          <p><strong>📞 No HP:</strong> 08123456789</p>
+          <p><strong>🏠 Alamat:</strong> Desa Sukamaju RT 03 RW 01</p>
+        </div>
+
+        <div class="status-card">
+          <h3>Statistik Kebun</h3>
+          <p><strong>🧺 Panen Terakhir:</strong> 200 kg Tomat</p>
+          <p><strong>💧 Kelembaban Rata-rata:</strong> 72%</p>
+          <p><strong>🌿 Jumlah Kebun:</strong> 4 Lokasi</p>
+        </div>
+
+        <button class="btn btn-secondary">Ubah Profil</button>
+        <button class="btn" style="margin-top: 10px">Keluar Akun</button>
+      </div>
+
+      <div class="bottom-nav">
+        <div class="nav-item" onclick="showScreen('dashboard')">
+          <i class="fa-solid fa-house-chimney" style="font-size: 25px"></i>
+          <div class="nav-text">Home</div>
+        </div>
+        <div class="nav-item" onclick="showScreen('monitoring')">
+          <i class="fa-solid fa-chart-line" style="font-size: 25px"></i>
+          <div class="nav-text">Monitor</div>
+        </div>
+        <div class="nav-item" onclick="showScreen('watering')">
+          <i class="fa-solid fa-calendar-days" style="font-size: 25px"></i>
+          <div class="nav-text">Jadwal</div>
+        </div>
+        <div class="nav-item" onclick="showScreen('notifications')">
+          <i class="fa-solid fa-bell" style="font-size: 25px"></i>
+          <div class="nav-text">Notifikasi</div>
+        </div>
+        <div class="nav-item active" onclick="showScreen('profile')">
+          <i class="fa-solid fa-user" style="font-size: 25px"></i>
+          <div class="nav-text">Profil</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showScreen(screenId) {
+        // Sembunyikan semua screen
+        document.querySelectorAll(".screen").forEach((screen) => {
+          screen.classList.remove("active");
+        });
+
+        // Tampilkan screen yang dipilih
+        const targetScreen = document.getElementById(screenId);
+        if (targetScreen) {
+          targetScreen.classList.add("active");
+        }
+
+        // Nonaktifkan semua nav-item
+        document.querySelectorAll(".bottom-nav .nav-item").forEach((item) => {
+          item.classList.remove("active");
+        });
+
+        // Aktifkan nav-item yang onclick-nya memanggil screenId
+        document.querySelectorAll(".bottom-nav .nav-item").forEach((item) => {
+          const onclickAttr = item.getAttribute("onclick");
+          if (onclickAttr && onclickAttr.includes(`'${screenId}'`)) {
+            item.classList.add("active");
+          }
+        });
+      }
+
+      // Toggle switch
+      document.addEventListener("click", function (e) {
+        if (e.target.classList.contains("toggle-switch")) {
+          e.target.classList.toggle("active");
+        }
+      });
+
+      // Kamera button
+      document.addEventListener("click", function (e) {
+        if (
+          e.target.classList.contains("camera-button") ||
+          e.target.closest(".camera-button")
+        ) {
+          const imagePreview = document.querySelector(".image-preview");
+          if (imagePreview) {
+            imagePreview.innerHTML = `
+                    <div style="text-align: center; color: #4CAF50;">
+                        <div style="font-size: 48px;">📷</div>
+                        <p>Foto berhasil diambil!</p>
+                        <small>Menganalisis gambar...</small>
+                    </div>
+                `;
+
+            setTimeout(() => {
+              imagePreview.innerHTML = `
+                        <div style="text-align: center; color: #4CAF50;">
+                            <div style="font-size: 48px;">✅</div>
+                            <p><strong>Analisis Selesai</strong></p>
+                            <small>Tanaman terlihat sehat</small>
+                        </div>
+                    `;
+            }, 2000);
+          }
+        }
+      });
+
+      // Interaksi klik umum
+      document.addEventListener("click", function (e) {
+        if (e.target.closest(".action-card")) {
+          const card = e.target.closest(".action-card");
+          card.style.transform = "scale(0.95)";
+          setTimeout(() => {
+            card.style.transform = "translateY(-2px)";
+          }, 100);
+        }
+
+        if (e.target.closest(".notification-item")) {
+          const notification = e.target.closest(".notification-item");
+          notification.style.opacity = "0.7";
+          notification.style.borderLeftColor = "#e0e0e0";
+        }
+      });
+
+      // Widget suhu animasi
+      setInterval(() => {
+        const tempDisplay = document.querySelector(".temp-display");
+        const dashboardActive = document
+          .getElementById("dashboard")
+          ?.classList.contains("active");
+        if (tempDisplay && dashboardActive) {
+          const currentTemp = parseInt(tempDisplay.textContent);
+          const variation = Math.random() > 0.5 ? 1 : -1;
+          const newTemp = currentTemp + (Math.random() > 0.8 ? variation : 0);
+          tempDisplay.textContent = newTemp + "°C";
+        }
+      }, 5000);
+
+      // Jadwal panen progress bar
+      document.addEventListener("click", function (e) {
+        if (e.target.textContent === "Jadwal Panen") {
+          setTimeout(() => {
+            document.querySelectorAll(".progress-fill").forEach((bar) => {
+              const currentWidth = parseInt(bar.style.width || "0");
+              if (currentWidth < 100) {
+                bar.style.width = currentWidth + Math.random() * 2 + "%";
+              }
+            });
+          }, 500);
+        }
+      });
+
+      // Simulasi data sensor
+      function updateSensorData() {
+        const sensorValues = document.querySelectorAll(".sensor-value");
+        const sensors = [
+          { element: sensorValues[0], min: 22, max: 28 },
+          { element: sensorValues[1], min: 40, max: 80 },
+          { element: sensorValues[2], min: 6.0, max: 7.5 },
+          { element: sensorValues[3], min: 75, max: 95 },
+        ];
+
+        sensors.forEach((sensor, index) => {
+          if (
+            sensor.element &&
+            document.getElementById("monitoring")?.classList.contains("active")
+          ) {
+            const currentValue = parseFloat(sensor.element.textContent);
+            const variation = (Math.random() - 0.5) * 2;
+            let newValue = currentValue + variation;
+            newValue = Math.max(sensor.min, Math.min(sensor.max, newValue));
+
+            if (index === 0) {
+              sensor.element.textContent = newValue.toFixed(0) + "°C";
+            } else if (index === 1) {
+              sensor.element.textContent = newValue.toFixed(0) + "%";
+              const card = sensor.element.closest(".sensor-card");
+              const status = card.querySelector("small");
+              if (newValue < 50) {
+                sensor.element.className = "sensor-value soil-warning";
+                status.textContent = "Perlu Siram";
+              } else if (newValue > 75) {
+                sensor.element.className = "sensor-value soil-good";
+                status.textContent = "Optimal";
+              }
+            } else if (index === 2) {
+              sensor.element.textContent = newValue.toFixed(1);
+            } else {
+              sensor.element.textContent = newValue.toFixed(0) + "%";
+            }
+          }
+        });
+      }
+
+      setInterval(updateSensorData, 3000);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const ctx = document.getElementById("humidityChart")?.getContext("2d");
+        if (ctx) {
+          new Chart(ctx, {
+            type: "line",
+            data: {
+              labels: ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"],
+              datasets: [
+                {
+                  label: "Kelembaban (%)",
+                  data: [65, 70, 68, 60, 55, 72, 75],
+                  backgroundColor: "rgba(76, 175, 80, 0.2)",
+                  borderColor: "#4CAF50",
+                  borderWidth: 2,
+                  fill: true,
+                  tension: 0.4,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: true, // << penting biar tidak meluber
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  max: 100,
+                },
+              },
+              plugins: {
+                legend: {
+                  display: false,
+                },
+              },
+            },
+          });
+        }
+      });
+
+      // Inisialisasi saat DOM siap
+      document.addEventListener("DOMContentLoaded", function () {
+        showScreen("login");
+        setTimeout(() => {
+          const logo = document.querySelector(".logo");
+          if (logo) {
+            logo.style.animation = "pulse 2s infinite";
+          }
+        }, 1000);
+      });
+
+      // Tambahkan animasi gaya langsung via JS
+      const style = document.createElement("style");
+      style.textContent = `
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .action-card:active {
+            transform: scale(0.95) !important;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .nav-item:active {
+            transform: scale(0.95);
+        }
+
+        .notification-item:hover {
+            background: #f8f9fa;
+            cursor: pointer;
+        }
+
+        .schedule-item:hover {
+            background: #f8f9fa;
+        }
+
+        .sensor-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .status-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .form-input:focus {
+            transform: scale(1.02);
+        }
+
+        .camera-button:hover {
+            background: #1976D2;
+            transform: translateY(-2px);
+        }
+
+        .weather-widget:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+    `;
+      document.head.appendChild(style);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>
