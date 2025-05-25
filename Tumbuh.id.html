@@ -97,7 +97,7 @@
             style="margin-top: 10px; color: #4caf50"
             onclick="showScreen('register')"
           >
-            Daftar Sebagai Petani Baru
+            Daftar
           </button>
         </div>
       </div>
@@ -202,6 +202,9 @@
       <!-- Screen 3: Profile -->
       <div id="profile" class="screen">
         <div class="header">
+          <button class="back-button" onclick="showScreen('dashboard')">
+            ←
+          </button>
           <h1>Profil Saya</h1>
           <div></div>
         </div>
@@ -218,13 +221,6 @@
               onclick="showScreen('edit-profile')"
             >
               Edit Profil
-            </button>
-            <button
-              class="btn btn-secondary"
-              onclick="showScreen('dashboard')"
-              style="margin-top: 10px; color: red"
-            >
-              Kembali Ke Dashboard Pages
             </button>
             <button
               class="btn btn-secondary"
@@ -738,10 +734,18 @@
             </div>
           </div>
 
-          <button class="btn" style="margin-top: 15px" onclick="showScreen('record-harvest')">
+          <button
+            class="btn"
+            style="margin-top: 15px"
+            onclick="showScreen('record-harvest')"
+          >
             Catat Hasil Panen
           </button>
-          <button class="btn" style="margin-top: 15px; color: #4caf50" onclick="showScreen('market-price')">
+          <button
+            class="btn"
+            style="margin-top: 15px; color: #4caf50"
+            onclick="showScreen('market-price')"
+          >
             Lihat Harga Pasar
           </button>
         </div>
@@ -774,8 +778,14 @@
             <label class="form-label-record-harvest">Tanggal Panen</label>
             <input type="date" class="form-input-record-harvest" />
           </div>
-          <button class="btn" onclick="showScreen('harvest')">Simpan Catatan</button>
-          <button class="btn btn-secondary" style="color: red;" onclick="showScreen('harvest')">
+          <button class="btn" onclick="showScreen('harvest')">
+            Simpan Catatan
+          </button>
+          <button
+            class="btn btn-secondary"
+            style="color: red"
+            onclick="showScreen('harvest')"
+          >
             Batal
           </button>
         </div>
