@@ -738,16 +738,76 @@
             </div>
           </div>
 
-          <button class="btn" style="margin-top: 15px">
+          <button class="btn" style="margin-top: 15px" onclick="showScreen('record-harvest')">
             Catat Hasil Panen
           </button>
-          <button class="btn" style="margin-top: 15px; color: #4caf50">
+          <button class="btn" style="margin-top: 15px; color: #4caf50" onclick="showScreen('market-price')">
             Lihat Harga Pasar
           </button>
         </div>
       </div>
 
-      <!-- Screen 12: Notifications -->
+      <!-- Screen 12: Catat Hasil Panen -->
+      <div id="record-harvest" class="screen">
+        <div class="header">
+          <h1>Catat Hasil Panen</h1>
+          <div></div>
+        </div>
+        <div class="content">
+          <div class="form-group">
+            <label class="form-label-record-harvest">Jenis Tanaman</label>
+            <input
+              type="text"
+              class="form-input-record-harvest"
+              placeholder="Contoh: Tomat Merah"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label-record-harvest">Jumlah Panen (kg)</label>
+            <input
+              type="number"
+              class="form-input-record-harvest"
+              placeholder="Contoh: 150"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label-record-harvest">Tanggal Panen</label>
+            <input type="date" class="form-input-record-harvest" />
+          </div>
+          <button class="btn" onclick="showScreen('harvest')">Simpan Catatan</button>
+          <button class="btn btn-secondary" style="color: red;" onclick="showScreen('harvest')">
+            Batal
+          </button>
+        </div>
+      </div>
+
+      <!-- Screen 13: Lihat Harga Pasar -->
+      <div id="market-price" class="screen">
+        <div class="header">
+          <button class="back-button" onclick="showScreen('harvest')">←</button>
+          <h1>Harga Pasar</h1>
+          <div></div>
+        </div>
+        <div class="content">
+          <div class="status-card">
+            <h3>Tomat Merah 🍅</h3>
+            <p>Harga Saat Ini: <strong>Rp 8.500/kg</strong></p>
+            <p>Harga Minggu Lalu: Rp 8.000/kg</p>
+          </div>
+          <div class="status-card" style="margin-top: 15px">
+            <h3>Cabai Merah 🌶️</h3>
+            <p>Harga Saat Ini: <strong>Rp 25.000/kg</strong></p>
+            <p>Harga Minggu Lalu: Rp 24.000/kg</p>
+          </div>
+          <div class="status-card" style="margin-top: 15px">
+            <h3>Mentimun 🥒</h3>
+            <p>Harga Saat Ini: <strong>Rp 6.000/kg</strong></p>
+            <p>Harga Minggu Lalu: Rp 6.200/kg</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 14: Notifications -->
       <div id="notifications" class="screen">
         <div class="header">
           <h1>Notifikasi</h1>
@@ -833,7 +893,7 @@
         </div>
       </div>
 
-      <!-- Screen 13: Add Schedule -->
+      <!-- Screen 15: Add Schedule -->
       <div id="add-schedule" class="screen">
         <div class="header">
           <h1>Tambah Jadwal</h1>

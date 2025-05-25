@@ -368,6 +368,52 @@ body {
   transform: scale(1.02);
 }
 
+.form-label-record-harvest {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: rgba(5, 5, 5, 0.9);
+}
+
+.form-input-record-harvest {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  background: rgb(255, 253, 253);
+  color: rgb(24, 23, 23);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.form-input-record-harvest::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.form-input-record-harvest:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+}
+
+#market-price .status-card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#market-price .status-card h3 {
+  margin-bottom: 10px;
+  color: #4caf50;
+}
+
+#market-price .status-card p {
+  margin: 5px 0;
+  color: #333;
+}
+
 .back-button-schedule {
   position: absolute;
   top:20px;
