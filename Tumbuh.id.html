@@ -604,13 +604,56 @@
             </div>
           </div>
 
-          <button class="btn" style="margin-top: 10px">
+          <button
+            class="btn"
+            style="margin-top: 10px"
+            onclick="showScreen('control-guide')"
+          >
             Lihat Panduan Pengendalian
           </button>
         </div>
       </div>
 
-      <!-- Screen 10: Harvest Schedule -->
+      <!-- Screen 10: Panduan Pengendalian -->
+      <div id="control-guide" class="screen">
+        <div class="header">
+          <button class="back-button" onclick="showScreen('pest')">←</button>
+          <h1>Panduan Pengendalian</h1>
+          <div></div>
+        </div>
+        <div class="content">
+          <div class="status-card">
+            <h3>Ulat Grayak</h3>
+            <p>🪱 Menyerang daun muda dan menyebabkan kerusakan besar.</p>
+            <ul>
+              <li>Gunakan insektisida nabati seperti ekstrak daun mimba.</li>
+              <li>Pasang perangkap feromon.</li>
+              <li>Periksa daun secara rutin dan buang ulat secara manual.</li>
+            </ul>
+          </div>
+
+          <div class="status-card" style="margin-top: 15px">
+            <h3>Tungau Merah</h3>
+            <p>🕷️ Menyebabkan bercak kuning dan kerusakan daun.</p>
+            <ul>
+              <li>Semprotkan air sabun ringan pada daun bagian bawah.</li>
+              <li>Gunakan akarisida alami seperti minyak neem.</li>
+              <li>Jaga kelembaban lingkungan agar tidak terlalu kering.</li>
+            </ul>
+          </div>
+
+          <div class="status-card" style="margin-top: 15px">
+            <h3>Tips Umum</h3>
+            <ul>
+              <li>Rotasi tanaman untuk mencegah siklus hama berulang.</li>
+              <li>Gunakan pupuk organik untuk memperkuat ketahanan tanaman.</li>
+              <li>Jaga kebersihan kebun dari gulma dan sisa tanaman mati.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 11: Harvest Schedule -->
       <div id="harvest" class="screen">
         <div class="header">
           <button class="back-button" onclick="showScreen('dashboard')">
@@ -704,7 +747,7 @@
         </div>
       </div>
 
-      <!-- Screen 11: Notifications -->
+      <!-- Screen 12: Notifications -->
       <div id="notifications" class="screen">
         <div class="header">
           <h1>Notifikasi</h1>
@@ -790,7 +833,7 @@
         </div>
       </div>
 
-      <!-- Screen 12: Add Schedule -->
+      <!-- Screen 13: Add Schedule -->
       <div id="add-schedule" class="screen">
         <div class="header">
           <h1>Tambah Jadwal</h1>
